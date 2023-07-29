@@ -1,0 +1,95 @@
+﻿<style>
+    .review-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+        .review-item p {
+            font-weight: bold;
+        }
+</style>
+@if (ViewBag.Reviews != null)
+{
+    <h2>Bình luận</h2>
+    <ul>
+        @foreach (var review in ViewBag.Reviews)
+        {
+            <li>
+
+
+
+                <div class="user_review_container d-flex flex-column flex-sm-row">
+                    <div class="user">
+
+                        <img src="~/Content/assets/dist/img/user1.jpg" alt="User Picture" style="width: 50px;"> <p>Tài khoản :@review.FullName</p>
+                        <div class="user_rating">
+                            <p>Đánh giá:</p>
+                            <div class="user-star-rating">
+                                <ul class="list-inline mb-0">
+                                    @if (review.Rate >= 1)
+                                    {
+                                        <li class="list-inline-item me-0"><i class="fa fa-star" aria-hidden="true"></i></li>
+
+                                    }
+                                    else
+                                    {
+                                        <li class="list-inline-item me-0"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                    }
+                                    @if (review.Rate >= 2)
+                                    {
+                                        <li class="list-inline-item me-0"><i class="fa fa-star" aria-hidden="true"></i></li>
+
+                                    }
+                                    else
+                                    {
+                                        <li class="list-inline-item me-0"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                    }
+                                    @if (review.Rate >= 3)
+                                    {
+                                        <li class="list-inline-item me-0"><i class="fa fa-star" aria-hidden="true"></i></li>
+
+                                    }
+                                    else
+                                    {
+                                        <li class="list-inline-item me-0"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                    }
+                                    @if (review.Rate >= 4)
+                                    {
+                                        <li class="list-inline-item me-0"><i class="fa fa-star" aria-hidden="true"></i></li>
+
+                                    }
+                                    else
+                                    {
+                                        <li class="list-inline-item me-0"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                    }
+                                    @if (review.Rate >= 5)
+                                    {
+                                        <li class="list-inline-item me-0"><i class="fa fa-star" aria-hidden="true"></i></li>
+
+                                    }
+                                    else
+                                    {
+                                        <li class="list-inline-item me-0"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- Add any other review details you want to display -->
+            </li>
+            <p>@review.Description</p>
+        }
+       
+    </ul>
+    
+   
+}
+else
+{
+    <p>Không có bình luận nào.</p>
+}
+
